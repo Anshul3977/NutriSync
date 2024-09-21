@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { login } from '../services/api';
-import './Auth.css';
+import { Container, TextField, Button, Typography, Box, Alert } from '@mui/material';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -13,6 +13,8 @@ function Login() {
       const response = await login(email, password);
       console.log(response);
       setError(''); 
+      // Redirect to dashboard or home page after successful login
+      window.location.href = '/dashboard';
     } catch (error) {
       console.error('Login failed:', error.response ? error.response.data : error.message);
       setError('Invalid email or password.');
@@ -20,29 +22,37 @@ function Login() {
   };
 
   return (
-    <div className="auth-container">
-      <h2 className="auth-title">Login to NutriSync</h2>
-      {error && <p className="auth-error">{error}</p>}
-      <form onSubmit={handleSubmit} className="auth-form">
-        <input
+    <Container maxWidth="sm" sx={{ mt: 4 }}>
+      <Typography variant="h4" component="h1" gutterBottom>
+        Login to NutriSync
+      </Typography>
+      {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
+      <form onSubmit={handleSubmit}>
+        <TextField
+          label="Email"
           type="email"
-          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="auth-input"
+          fullWidth
           required
+          margin="normal"
         />
-        <input
+        <TextField
+          label="Password"
           type="password"
-          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="auth-input"
+          fullWidth
           required
+          margin="normal"
         />
-        <button type="submit" className="auth-button">Login</button>
+        <Box sx={{ mt: 2 }}>
+          <Button type="submit" variant="contained" color="primary" fullWidth>
+            Login
+          </Button>
+        </Box>
       </form>
-    </div>
+    </Container>
   );
 }
 

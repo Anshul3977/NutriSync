@@ -1,60 +1,187 @@
-/* Home.css */
-.home-container {
-    font-family: Arial, sans-serif;
-    color: #333;
-}
-
-/* Hero Section */
-.hero-section {
-    background-image: url('path-to-your-background-image.jpg'); /* Replace with your image path */
-    background-size: cover;
-    background-position: center;
-    padding: 100px 20px;
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif; /* Updated font */
+    background: #f4f4f9;
+  }
+  
+  /* Home Page */
+  .home-container {
     text-align: center;
-    color: #fff;
-    position: relative;
+    padding: 50px;
+  }
+  
+  .hero-section {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    margin-bottom: 40px;
+  }
+  
+  .hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero-section p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .button-group {
+    margin-top: 20px;
+  }
+  
+  .button-group .btn {
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .explore-btn {
+    background-color: #ff9900;
+    color: white;
+    margin-right: 15px;
+  }
+  
+  .dashboard-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .lookup-section {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .lookup-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .lookup-form {
+    margin-bottom: 20px;
+  }
+  
+  .lookup-form input {
+    padding: 10px;
+    width: 70%;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .lookup-form .btn {
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .search-nutrition-btn {
+    background-color: #ff9900;
+    color: white;
+  }
+  
+  .search-recipes-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Button Hover Animations */
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  /* Navbar Animations */
+  .navbar-link:hover {
+    color: #ff9900;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-link:active {
+    color: #007bff;
+  }
+  
+  /* Hover Effects on Links */
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Button Animations */
+  .btn:active {
+    transform: scale(0.98);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  /* Updated Button Styling */
+.soft-ui-button {
+    padding: 12px 25px;
+    border-radius: 25px; /* Increased border radius for more rounded buttons */
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .explore-btn {
+    background-color: #ff9900;
+    color: white;
+    margin-right: 15px;
+  }
+  
+  .dashboard-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .soft-ui-button:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  .soft-ui-button:active {
+    transform: scale(0.98);
+  }
+  /* Add to Home.css or the section's CSS file */
+.section {
+    background: linear-gradient(135deg, #333333, #1a1a1a); /* Dark gradient for sections */
+    padding: 20px;
+    border-radius: 8px; /* Soft rounded corners */
+    margin-bottom: 20px;
 }
-
-.hero-section::before {
+.welcome-section {
+    background: linear-gradient(135deg, #f6f6f6, #e6e6e6);
+  }
+  /* Button hover effects */
+button {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  button::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Overlay */
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-.cta-button {
-    padding: 15px 30px;
-    background-color: #f90;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2em;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #333;
-}
-
-/* Nutrition Lookup Section */
-.nutrition-lookup-section {
-    padding: 50px 20px;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-.nutrition-lookup-section h2 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    color: #333;
-}
+    background: rgba(255, 255, 255, 0.5);
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s, transform 0.4s;
+  }
+  
+  button:hover::after {
+    opacity: 1;
+    transform: scale(2);
+  }
+  
