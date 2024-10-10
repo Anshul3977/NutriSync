@@ -1,26 +1,28 @@
-// App.jsx
+// App.jsx (with page transitions)
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { ThemeProvider } from '@mui/material/styles';
-import theme from './theme';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
+import './App.css'; // For transition styles
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
+    <Router>
+      <Navbar />
+      <TransitionGroup>
+        <CSSTransition timeout={300} classNames="fade" key={window.location.pathname}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
+    </Router>
   );
 }
 
